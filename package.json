@@ -1,0 +1,28 @@
+{
+  "name": "details-polyfill",
+  "version": "1.0.0",
+  "description": "Polyfill for the HTML5 `<details>` element",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/details-polyfill.git"
+  },
+  "keywords": [
+    "details",
+    "summary",
+    "html5",
+    "polyfill"
+  ],
+  "author": "Rico Sta. Cruz <rico@ricostacruz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rstacruz/details-polyfill/issues"
+  },
+  "homepage": "https://github.com/rstacruz/details-polyfill#readme"
+}
