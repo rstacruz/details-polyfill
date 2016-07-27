@@ -1,6 +1,44 @@
 # details-polyill
 
-> Polyfill for the HTML5 `<details>` element.
+> Polyfill for the HTML5 `<details>` element
+
+![](docs/images/details-polyfill.gif)
+
+How it works
+------------
+
+In case the browser doesn't support `<details>`, it adds the following behaviors:
+
+  - When clicking `details > summary`, it toggles the `open` attribute in `details`.
+
+It also adds these CSS styles:
+
+  - `summary:before` is styled with a disclosure triangle.
+  - `details:not([open]) > :not(summary)` elements are hidden. (that is: all children of closed `details`, except `summary`)
+  - The `<html>` element gets the `no-details` class.
+
+Limitations
+-----------
+
+The `<details>` element must not have loose text inside it. Everything inside it should be in elements. For instance, this will not work:
+
+```html
+<details>
+  <summary>More info...</summary>
+  No info available.
+</details>
+```
+
+But this will:
+
+```html
+<details>
+  <summary>More info...</summary>
+  <span>No info available.</span>
+</details>
+```
+
+Also, since we're styling `summary:before`, you shouldn't use `summary:before` other than to create your own disclosure triangle.
 
 Thanks
 ------
