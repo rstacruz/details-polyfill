@@ -73,8 +73,10 @@ The `<details>` element must not have loose text inside it. Everything inside it
 ...unless it's for a disclosure triangle. This library uses `summary::before` to create a default triangle.
 
 #### Summary as first child
-
 The `summary` element must also be the first child of the `details` element. Browsers supporting the `details` element natively will hoist `summary` elements up, but details-polyfill.js won't.
+
+#### JavaScript `el.open = true`
+...will not work like how you think it does. You also need to do `.setAttribute('open', 'open')` or `.removeAttribute('open')`.
 
 </details>
 
