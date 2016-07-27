@@ -17,6 +17,23 @@ It also adds these CSS styles:
   - `details:not([open]) > :not(summary)` elements are hidden. (that is: all children of closed `details`, except `summary`)
   - The `<html>` element gets the `no-details` class.
 
+Usage
+-----
+
+details-polyfill is available via npm.
+
+```
+npm install --save details-polyfill
+```
+
+Requiring it will immediately inject the needed behaviors.
+
+```js
+require('details-polyfill')
+```
+
+The file [index.js](index.js) is also usable as a standalone script.
+
 Limitations
 -----------
 
