@@ -29,10 +29,10 @@ void (function (root, factory) {
       if (!details) return
 
       if (details.getAttribute('open')) {
-        details.open = true
+        details.open = false
         details.removeAttribute('open')
       } else {
-        details.open = false
+        details.open = true
         details.setAttribute('open', 'open')
       }
     }
