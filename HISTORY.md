@@ -1,3 +1,10 @@
+## [v1.0.2]
+> Jul 29, 2016
+
+- Fix `open` attribute.
+
+[v1.0.2]: https://github.com/rstacruz/details-polyfill/compare/v1.0.1...v1.0.2
+
 ## [v1.0.1]
 > Jul 28, 2016
 
