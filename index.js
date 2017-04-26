@@ -15,6 +15,7 @@ void (function (root, factory) {
   window.addEventListener('click', clickHandler)
 
   injectStyle('details-polyfill-style',
+    'html.no-details ' + DETAILS + ', html.no-details ' + DETAILS + ' > ' + SUMMARY + ' { display: block; }\n' +
     'html.no-details ' + DETAILS + ':not([open]) > :not(' + SUMMARY + ') { display: none; }\n' +
     'html.no-details ' + DETAILS + ' > ' + SUMMARY + ':before { content: "▶"; display: inline-block; font-size: .8em; width: 1.5em; }\n' +
     'html.no-details ' + DETAILS + '[open] > ' + SUMMARY + ':before { content: "▼"; }')
