@@ -1,6 +1,6 @@
 {
   "name": "details-polyfill",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Polyfill for the HTML5 `<details>` element",
   "main": "index.js",
   "directories": {
