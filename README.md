@@ -29,7 +29,7 @@ How it works
 ------------
 
 <details>
-<summary>Just include the script on any page that uses `<details>`.</summary>
+<summary>Just include the script on any page that uses <code>&lt;details&gt;</code>.</summary>
 
 In case the browser doesn't support `<details>`, it adds the following behaviors:
 
@@ -85,7 +85,7 @@ Alternatives
 ------------
 
 <details>
-<summary>Here are a few other polyfills for `<details>`.</summary>
+<summary>Here are a few other polyfills for <code>&lt;details&gt;</code>.</summary>
 
 I wrote this because everything else out there either depend on big libraries, or are too complicated. In contrast, `details-polyfill` has <100 lines of code, and only comes with a *.js* file.
 
