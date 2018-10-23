@@ -1,4 +1,4 @@
-# details-polyill
+# details-polyfill
 
 > Polyfill for the HTML5 `<details>` element, no dependencies
 
