@@ -6,18 +6,24 @@ void (function (root, factory) {
   var DETAILS = 'details'
   var SUMMARY = 'summary'
 
-  var supported = checkSupport()
-  if (supported) return
+  /**
+   * Initializes the pollyfill.
+   */
+  function init() {
+    var supported = checkSupport()
 
-  // Add a classname
-  document.documentElement.className += ' no-details'
+    if (supported) return
 
-  window.addEventListener('click', clickHandler)
+    // Add a classname
+    document.documentElement.className += ' no-details'
 
-  injectStyle('details-polyfill-style',
-    'html.no-details ' + DETAILS + ':not([open]) > :not(' + SUMMARY + ') { display: none; }\n' +
-    'html.no-details ' + DETAILS + ' > ' + SUMMARY + ':before { content: "\u25b6"; display: inline-block; font-size: .8em; width: 1.5em; }\n' +
-    'html.no-details ' + DETAILS + '[open] > ' + SUMMARY + ':before { content: "\u25bc"; }')
+    window.addEventListener('click', clickHandler)
+
+    injectStyle('details-polyfill-style',
+      'html.no-details ' + DETAILS + ':not([open]) > :not(' + SUMMARY + ') { display: none; }\n' +
+      'html.no-details ' + DETAILS + ' > ' + SUMMARY + ':before { content: "\u25b6"; display: inline-block; font-size: .8em; width: 1.5em; }\n' +
+      'html.no-details ' + DETAILS + '[open] > ' + SUMMARY + ':before { content: "\u25bc"; }')
+  }
 
   /*
    * Click handler for `<summary>` tags
@@ -69,5 +75,12 @@ void (function (root, factory) {
     el.innerHTML = style
 
     document.getElementsByTagName('head')[0].appendChild(el)
+  }
+
+  // Initialize the polyfill only when all DOM content is loaded.
+  if (document.readyState !== 'loading') {
+    init()
+  } else {
+    document.addEventListener('DOMContentLoaded', init)
   }
 })); // eslint-disable-line semi
