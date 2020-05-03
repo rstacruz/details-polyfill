@@ -36,6 +36,9 @@ void (function (root, factory) {
       details.open = true;
       details.setAttribute('open', 'open');
     }
+
+    const toggleEvent = createEvent('toggle');
+    details.dispatchEvent(toggleEvent);
   }
 
   /*
@@ -69,5 +72,18 @@ void (function (root, factory) {
     el.innerHTML = style
 
     document.getElementsByTagName('head')[0].appendChild(el)
+  }
+
+  /*
+   * Creates custom event
+   */
+  function createEvent(type) {
+    if (typeof Event === 'function') {
+      return new Event(type, { bubbles: true, cancelable: true });
+    }
+
+    const event = document.createEvent('Event');
+    event.initEvent(type, true, true);
+    return event;
   }
 })); // eslint-disable-line semi
