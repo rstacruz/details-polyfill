@@ -24,17 +24,17 @@ void (function (root, factory) {
    */
 
   function clickHandler (e) {
-    if (e.target.nodeName.toLowerCase() === 'summary') {
-      var details = e.target.parentNode
-      if (!details) return
+    if (e.target.nodeName.toLowerCase() !== SUMMARY) return;
 
-      if (details.getAttribute('open')) {
-        details.open = false
-        details.removeAttribute('open')
-      } else {
-        details.open = true
-        details.setAttribute('open', 'open')
-      }
+    var details = e.target.parentNode;
+    if (!details) return;
+
+    if (details.getAttribute('open')) {
+      details.open = false;
+      details.removeAttribute('open');
+    } else {
+      details.open = true;
+      details.setAttribute('open', 'open');
     }
   }
 
