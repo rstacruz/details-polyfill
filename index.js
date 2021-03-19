@@ -17,7 +17,7 @@ void (function (root, factory) {
   injectStyle('details-polyfill-style',
     'html.no-details ' + DETAILS + ' { display: block; }\n' +              
     'html.no-details ' + DETAILS + ':not([open]) > :not(' + SUMMARY + ') { display: none; }\n' +
-    'html.no-details ' + DETAILS + ' > ' + SUMMARY + ':before { content: "\u25b6"; display: inline-block; font-size: .8em; width: 1.5em; }\n' +
+    'html.no-details ' + DETAILS + ' > ' + SUMMARY + ':before { content: "\u25b6"; font-family: "Segoe UI Symbol"; display: inline-block; font-size: .8em; width: 1.5em; }\n' +
     'html.no-details ' + DETAILS + '[open] > ' + SUMMARY + ':before { content: "\u25bc"; }')
 
   /*
